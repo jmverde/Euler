@@ -3,6 +3,10 @@ package euler.comunes;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
+/**
+ * @author Radiofisica
+ *
+ */
 public class Helpers {
 
 	public static int longitud(int numero) {
@@ -45,4 +49,30 @@ public class Helpers {
 		return divisores;
 
 	}
+
+	
+/*	Calcula el factorial de un entero
+	uso biginteger para no tener problemas de digitos
+	*/
+	
+	
+	public static BigInteger factorial (int n){
+		
+		if (n<=1){
+			return BigInteger.ONE;
+		}
+		else {
+			return BigInteger.valueOf(n).multiply(factorial(n-1));
+		}
+		
+		
+	}
+	
+	
+	
+	// Returns n choose k.
+	public static BigInteger binomial(int n, int k) {
+		return factorial(n).divide(factorial(n - k).multiply(factorial(k)));
+	}
+
 }
