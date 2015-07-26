@@ -16,7 +16,6 @@ public class Problem019 implements ISolucion{
 	@Override
 	public String resolver() {
 		int contador = 0;
-		
 		for (int year=1901;year<=2000;year++){
 			
 			for (int mes=1;mes<=12;mes++){
@@ -35,8 +34,11 @@ public class Problem019 implements ISolucion{
 	 * @author jm
 	 * Implementa el algortimo de Zeller para el calendario juliano
 	 * devuelve el dia de la semana en un formato  (0 = Saturday, 1 = Sunday, 2 = Monday, ..., 6 = Friday)
-	 *
+	 * Se cambia la formula de la wiki para que todos los terminos sean positivos (se pasa -2j a 5j 
+	 * y asi no haya problemas con los modulos de numeros negativos
 	 */
+	
+	
 	
 	
 	private  int diaSemana(int d, int m, int y){
@@ -44,7 +46,7 @@ public class Problem019 implements ISolucion{
 		// TODO check que el dia es correcto
 		
 		
-		if (m==1 ||m ==2){
+		if (m==1 ||m ==2){	
 			m=m+12;
 			y=y-1;
 					
@@ -53,7 +55,7 @@ public class Problem019 implements ISolucion{
 		int k = y%100;
 		int j = y/100;
 		
-		int h = (d+ (13*(m+1))/5+k+k/4+j/4-2*j)%7;
+		int h = (d+ (26*(m+1))/10+k+k/4+j/4+5*j)%7;
 				
 		return h;
 		
