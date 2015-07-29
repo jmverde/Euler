@@ -75,4 +75,33 @@ public class Helpers {
 		return factorial(n).divide(factorial(n - k).multiply(factorial(k)));
 	}
 
+
+
+
+	public static int valorLetra(char c) {
+		
+		if ((c>='A')&&(c<='Z')){
+			
+			return c-'A'+1;
+		}
+		
+		if ((c>='a')&&(c<='z')){
+			return c-'a'+1;
+		}
+		
+		return 0;
+		
+	}
+
+	public static int valorPalabra(String palabra){
+		int valor =0;
+		
+		for (char l:palabra.toCharArray()){
+			valor += valorLetra(l);
+		}
+		
+		return valor;
+	}
+	
+	
 }
