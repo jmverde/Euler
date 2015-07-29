@@ -50,6 +50,14 @@ public class Helpers {
 
 	}
 
+	
+	public static boolean esPrimo(int n){
+		return (divisores(n).size()==1);
+	}
+	
+	
+	
+	
 	/*
 	 * Calcula el factorial de un entero uso biginteger para no tener problemas
 	 * de digitos
