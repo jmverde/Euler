@@ -2,6 +2,7 @@ package euler.comunes;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @author Radiofisica
@@ -115,7 +116,7 @@ public class Helpers {
 		return permus;
 	}
 
-	public static void doPermutaciones(String prefijo, String cadena) {
+	private static void doPermutaciones(String prefijo, String cadena) {
 
 		int n = cadena.length();
 
@@ -130,6 +131,46 @@ public class Helpers {
 			}
 		}
 
-	}
+	
 
+	
+	
+		
+	}
+	
+	
+	public static boolean esPandigital(String candidato){
+		
+		return esPandigital(candidato, 1, 9);
+	}
+	
+	public static boolean esPandigital(String candidato, int j){
+		
+		return esPandigital(candidato, 1, j);
+	}
+	
+	
+	
+	public static boolean esPandigital(String candidato,int i, int j){
+	
+		if (candidato.length()!= (j-i+1)){
+			return false;
+		}
+		
+		// Creamos un patron 
+		
+		String patron ="";
+		for(int ii=i;ii<=j;ii++){
+			patron+=ii;
+		}
+		
+		//Comparamos con el patron 
+		
+		char[] test = candidato.toCharArray();
+		Arrays.sort(test);
+		
+		
+		return new String(test).equals(patron);
+	}
+	
 }
