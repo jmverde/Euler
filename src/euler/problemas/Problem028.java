@@ -13,6 +13,7 @@ import euler.comunes.ISolucion;
  * partimos de 1 y se añade cuatro veces 2 para tener las esquinas del de lado 3
  * despues se añade cuatro veces 4 para tener las de lado 5
  * etc
+ * y en realidad se podria hacer con papel y boli en 5 minutos
  */
 public class Problem028 implements ISolucion {
 	

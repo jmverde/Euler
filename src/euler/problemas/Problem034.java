@@ -28,11 +28,15 @@ public class Problem034 implements ISolucion {
 
 		// explicitamente se quitan 1 y 2
 		for (int i = 3; i < LIMIT; i++) {
-			BigInteger test = BigInteger.ZERO;
+
+		
+		BigInteger test = BigInteger.ZERO;
 
 			for (int j = 0; j < Helpers.longitud(i); j++) {
 
-				test.add(Helpers.factorial((int) ((i / (Math.pow(10, j))) % 10)));
+				test=test.add(Helpers.factorial((int) ((i / ((int)Math.pow(10, j))) % 10)));
+				
+
 			}
 
 			if (test.equals(BigInteger.valueOf(i))) {
@@ -44,8 +48,8 @@ public class Problem034 implements ISolucion {
 
 		int resultado =0;
 		
-		for(int i:numeros){
-			resultado+=i;
+		for(int ii:numeros){
+			resultado+=ii;
 		}
 		return String.valueOf(resultado);
 	}

@@ -105,7 +105,7 @@ public class Helpers {
 
 	// Esto es un simple capsula para la de verdad, que es la de dos argumentos
 
-	public static ArrayList<String> permus = new ArrayList<String>();
+	private static ArrayList<String> permus = new ArrayList<String>();
 
 	public static ArrayList<String> permutaciones(String cadena) {
 
