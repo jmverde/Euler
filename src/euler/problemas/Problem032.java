@@ -21,7 +21,7 @@ public class Problem032 implements ISolucion {
 
 		Set<Integer> candidatos = new HashSet<Integer>();
 		ArrayList<String> cadenas = Helpers.permutaciones("123456789");
-
+		
 		// Harcodeo los limites por que tampoco es tanto problema
 
 		for (String modelo : cadenas) {

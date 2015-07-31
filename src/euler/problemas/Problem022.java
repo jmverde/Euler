@@ -66,7 +66,7 @@ public class Problem022 implements ISolucion {
 		
 	}
 
-	public String readFile() throws IOException {
+	private String readFile() throws IOException {
 
 		String path = "./data/p022_names.txt";
 
