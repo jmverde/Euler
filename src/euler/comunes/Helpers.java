@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 /**
  * @author Radiofisica
- *
+ * 
  */
 public class Helpers {
 
@@ -51,14 +51,10 @@ public class Helpers {
 
 	}
 
-	
-	public static boolean esPrimo(int n){
-		return (divisores(n).size()==1);
+	public static boolean esPrimo(int n) {
+		return (divisores(n).size() == 1);
 	}
-	
-	
-	
-	
+
 	/*
 	 * Calcula el factorial de un entero uso biginteger para no tener problemas
 	 * de digitos
@@ -127,50 +123,77 @@ public class Helpers {
 		else {
 			for (int i = 0; i < n; i++) {
 
-				doPermutaciones(prefijo + cadena.charAt(i), cadena.substring(0, i) + cadena.substring(i + 1));
+				doPermutaciones(prefijo + cadena.charAt(i),
+						cadena.substring(0, i) + cadena.substring(i + 1));
 			}
 		}
 
-	
-
-	
-	
-		
 	}
-	
-	
-	public static boolean esPandigital(String candidato){
-		
+
+	public static boolean esPandigital(String candidato) {
+
 		return esPandigital(candidato, 1, 9);
 	}
-	
-	public static boolean esPandigital(String candidato, int j){
-		
+
+	public static boolean esPandigital(String candidato, int j) {
+
 		return esPandigital(candidato, 1, j);
 	}
-	
-	
-	
-	public static boolean esPandigital(String candidato,int i, int j){
-	
-		if (candidato.length()!= (j-i+1)){
+
+	public static boolean esPandigital(String candidato, int i, int j) {
+
+		if (candidato.length() != (j - i + 1)) {
 			return false;
 		}
-		
-		// Creamos un patron 
-		
-		String patron ="";
-		for(int ii=i;ii<=j;ii++){
-			patron+=ii;
+
+		// Creamos un patron
+
+		String patron = "";
+		for (int ii = i; ii <= j; ii++) {
+			patron += ii;
 		}
-		
-		//Comparamos con el patron 
-		
+
+		// Comparamos con el patron
+
 		char[] test = candidato.toCharArray();
 		Arrays.sort(test);
-		
-		
+
 		return new String(test).equals(patron);
 	}
-	
+
+	/*
+	 * Generamos los numeros triagular, pentagonal y exagonal en int y
+	 * BigInteger
+	 */
+
+	public static int numeroTriangular(int n) {
+		return (n * (n + 1)) / 2;
+	}
+
+	public static BigInteger numeroTriangular(BigInteger n) {
+
+		return n.multiply(n.add(BigInteger.ONE)).divide(BigInteger.valueOf(2));
+
+	}
+
+	public static int numeroPentagonal(int n) {
+		return (n * (3 * n - 1)) / 2;
+	}
+
+	public static BigInteger numeroPentagonal(BigInteger n) {
+
+		return n.multiply(
+				BigInteger.valueOf(3).multiply(n).add(BigInteger.valueOf(-1)))
+				.divide(BigInteger.valueOf(2));
+
+	}
+
+	public static int numeroHexagonal(int n) {
+		return n * (2 * n - 1);
+	}
+
+	public static BigInteger numeroHexagonal(BigInteger n){
+		return n.multiply(BigInteger.valueOf(2).multiply(n).add(BigInteger.valueOf(-1)));
+	}
 }
+
